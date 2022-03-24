@@ -10,7 +10,7 @@ int main() {
 	return 0;
 }
 
-template<typename Any>
+template<typename Any> // generic function - accepts all numeric data types
 Any maxElement(Any arr[], int N){
 	Any max = arr[0];
 	for (int i=1; i<N; i++){
