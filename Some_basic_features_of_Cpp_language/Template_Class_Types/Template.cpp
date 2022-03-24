@@ -5,14 +5,14 @@ template <typename Any>
 class Mult {
 	public:
 	Mult (Any a, Any b) {x = a; y = b;};
-	Any mult();
+	Any mult(); // prototype of the method
 	Any x,y;
 };
 
 
 
 
-template <typename Any>
+template <typename Any> // defenition of the method in the class Mult
 Any Mult<Any> :: mult() {return x*y;} //defining function
 
 int main() {
