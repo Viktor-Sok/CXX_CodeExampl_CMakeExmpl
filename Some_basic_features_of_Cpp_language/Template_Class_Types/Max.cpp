@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
+// generic function
 template<typename Any>
-Any maxElement(Any arr[], int N);
+Any maxElement(Any arr[], int N); // prototype of the function
 
 
 
