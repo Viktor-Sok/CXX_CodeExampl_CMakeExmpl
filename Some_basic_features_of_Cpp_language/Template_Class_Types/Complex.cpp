@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
 
-template<typename T>
+// generic class
+template<typename T> // when calling specific type will be passsed instead of T
 class Complex{
 	public:
-	Complex(T& m, T& n) {real =m; imag = n;}
+	Complex(T& m, T& n) {real =m; imag = n;} // Constructor, m and n - instance variables
 	void get_real() {cout<< "The real part of the complex number is " << 
 		real << endl;}
 	void get_imaginary() {cout<< "The imaginary part of the complex number is " << 
