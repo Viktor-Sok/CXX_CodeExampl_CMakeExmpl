@@ -1,0 +1,17 @@
+1. Create build folder inside the source folder
+md build
+cd build
+2.
+cmake -G "MinGW Makefiles" ..\
+MinGW32-make
+
+NB: if you want to have your build folder separate from the source folder
+NB: -G flag specifes generator used
+1. Create cmakelists_tests_build folder
+
+cmake -G "MinGW Makefiles" ..\cmakelists_test
+MinGW32-make
+__________________
+on Linux:
+cmake ..\cmakelists_test
+make

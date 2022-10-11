@@ -1,0 +1,17 @@
+Run from the "build" folder:
+1.Compiling, objects files will appear in the "build" folder:
+
+g++ -I ..\include  -c ..\src\main.cpp  ..\src\friend.cpp ..\src\merge_names.cpp 
+
+NB: -I (Include Flag) is the path to all the headers, this is wy we don't have to specify relative paths in the "#include" of main.cpp. It\s a good practice. 
+2. Linking, executable will be saved in the "bin" folder:
+
+g++ -o ..\bin\program.exe main.o friend.o merge_names.o
+
+
+NB: friend.cpp and merge_names.cpp all have their corresponding headers friend.h and merge_names.h,
+if you include  merge_names.cpp in the main.cpp, it's effectively like copying the whole code from merge_names.cpp
+into the main.cpp so ou don't have to generate an object file for merge_namescpp and the compilation process would look like.
+Anyway, it's a good practice to have headers? becous it allows to recompile only files that jave been changed and not all of them.
+NB: compiling and linking at the same time
+g++ -o main.exe main.cpp others.cpp
