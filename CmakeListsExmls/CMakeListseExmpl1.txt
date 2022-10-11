@@ -1,0 +1,27 @@
+ #
+ # Coomands in [] brackets are just possible additional functionality 
+ #
+ #        Folder Structure
+ #  root---src-------include------lib
+ #          \         \          \
+ #            .cpp    .h         .h .cpp (static/dunamic libraries)
+
+ # version of CMake
+cmake_minimum_required(VERSION 3.12)
+ # project name and version
+project(MyProject VERSION 1.0.0)
+#name of .exe and target .cpp file; hello.cpp has the header hello.h (basically linking static library)
+add_executable(cmake-good main.cpp [hello.cpp]) 
+# name of library and .h and .cpp files (better practise than adding them to add_executable) It just adds
+# the library to the project (declaration), but we need to specify what executable (or library) it should be linked to in target_link_library
+# will be eventually moved to the lib directory
+[add_library(say-hello [SHARED/STATIC] hello.h hello.cpp)] # shared if used will add library as a separate file as if it's dynamic, STATIC by default
+target_link_libraries(cmake-good PRIVATE say-hello) # linking say-hello static library to the cmake-good executable with PRIVATE mode
+add_subdirectory(lib) # adds subdirectory (or include for headers), in the subdir we also are creating CMakeLists.txt
+#____________CMakeLists.txt in lib_______________
+# path are specified relative to the very first CMakeLists.txt which is in the root(Project/Workspace) directory
+add_library(say-hello [SHARED/STATIC] hello.h hello.cpp) 
+target_include_directories(say-hello PUBLIC "$CMAKE_CURRENT_SOURCE_DIR")???# PUBLIC means that all targets which uses this library wiil have acces to this path
+target_compile_definitions(say-hello PUBLIC[PRIVATE] SAY_HELLO_VERSION = 8) # preprocces defenition, we would be able to output SAY_HELLO_VERSION from C++
+# program as a constant , PUBLIC means that this variable will be available to any .cpp which uses this library, with PRIVATE it won't be
+#___________________________________________________
