@@ -1,0 +1,1 @@
+How to coonect to a project static library .a + .h (compiled file + header)

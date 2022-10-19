@@ -1,0 +1,2 @@
+C:\Dev\mingw64_winlibs\bin\ar.exe qc libsum_lib.a CMakeFiles/sum_lib.dir/fun.cpp.obj
+C:\Dev\mingw64_winlibs\bin\ranlib.exe libsum_lib.a
