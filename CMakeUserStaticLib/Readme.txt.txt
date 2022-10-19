@@ -1,3 +1,5 @@
+How to create your static library and use it in yuor project at the same time
+
 I assume you are having issues understanding how builds work. I'll try to help you fill in the gaps.
 
 A target is an executable or a library built by cmake.
