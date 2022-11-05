@@ -19,7 +19,7 @@ class Numbers {
 private:
     std::vector<int> v;
 public:
-    Numbers(initializer_list<int> list): v(list){} // used to initialize v
+    Numbers(initializer_list<int> list): v(list){} // std::initializer_list is used to initialize v the ususal way v = {1, 2, 3}
     void printNumbers() {
         for (auto e : v) {
              cout << e << " ";
