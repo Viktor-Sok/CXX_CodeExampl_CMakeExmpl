@@ -29,7 +29,7 @@ public:
 
 int main() {
     Numbers n[]  =  {num_v<1, 5>, num_v<3, 6>, num_v<7, 8>}; // all the sequances num_v will be calculated in compile time
-    //Numbers n[] = {{1, 2, 3, 4, 5}, {3, 4, 5, 6}, {7, 8}}; // the line above will get us the result equavalent to this
+    //Numbers n[] = {{1, 2, 3, 4, 5}, {3, 4, 5, 6}, {7, 8}}; // the line above will get us the result equivalent to this
     for (auto e : n) {
         e.printNumbers();
         cout << endl;
